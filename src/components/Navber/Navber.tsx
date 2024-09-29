@@ -1,5 +1,6 @@
 "use client"
 
+import Link from 'next/link'
 import './navber.css'
 
 import React, { useState } from 'react'
@@ -11,7 +12,7 @@ const Navber = () => {
 
     const [open, isOpen] = useState(true)
     return (
-        <nav className="bg-[#149777] fixed w-full z-20 top-0 start-0 ">
+        <nav className="bg-[#149777] fixed w-full  top-0 start-0 navber-body">
             <div className='max-w-6xl mx-auto'>
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <a
@@ -21,13 +22,14 @@ const Navber = () => {
                         <img
                             src="https://i.ibb.co.com/g61VD5G/Screenshot-1-removebg-preview.png"
                             className="h-10"
-                            alt="Flowbite Logo"
+                            alt="Bicroy.com logo image"
                         />
 
                     </a>
                     <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                         <>
-                            <button
+
+                            <Link href="/login"><button
                                 style={{
                                     WebkitBoxReflect:
                                         "below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4))"
@@ -36,10 +38,10 @@ const Navber = () => {
                             >
                                 Button
                                 <p className="absolute z-40 font-semibold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent top-1/2 left-1/2 -translate-x-1/2 group-hover:-translate-y-full h-full w-full transition-all duration-300 -translate-y-[30%] tracking-widest">
-                                    WELCOME
+                                    Login
                                 </p>
                                 <p className="absolute z-40 top-1/2 left-1/2 bg-gradient-to-r from-red-700 to-orange-700 bg-clip-text text-transparent -translate-x-1/2 translate-y-full h-full w-full transition-all duration-300 group-hover:-translate-y-[40%] tracking-widest font-extrabold">
-                                    SAHARA
+                                    From
                                 </p>
                                 <svg
                                     className="absolute w-full h-full scale-x-125 rotate-180 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 group-hover:animate-none animate-pulse group-hover:-translate-y-[45%] transition-all duration-300"
@@ -105,7 +107,9 @@ const Navber = () => {
                                         fillOpacity={1}
                                     />
                                 </svg>
-                            </button>
+                            </button></Link>
+
+
                         </>
 
                         <button
@@ -130,7 +134,7 @@ const Navber = () => {
 
                             <li>
                                 <div className="button-container">
-                                    <div className="btn"><a href="#">Home</a></div>
+                                    <div className="btn"><Link href="/">Home</Link></div>
                                 </div>
 
                             </li>
@@ -156,7 +160,7 @@ const Navber = () => {
                         </ul>
                     </div>
                 </div>
-                
+
             </div>
         </nav>
 

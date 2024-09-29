@@ -11,7 +11,7 @@ const Product = () => {
         <div className='max-w-6xl mx-auto px-4'>
             <h4 className='text-[18px] font-semibold py-5 md:py-10 ml-2'>Browse items by category</h4>
             <div className='grid grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-x-20 pb-10 md:pb-20'>
-                <div className='flex card-hover items-center gap-2 bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+                <div className='flex card-hover cursor-pointer items-center gap-2 bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <FaMobileRetro className='text-4xl md:text-5xl text-[#59BCD1]'></FaMobileRetro>
                     </div>
@@ -21,7 +21,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px]  card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px]  card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <GrMonitor className='text-4xl md:text-5xl text-[#15191a]'></GrMonitor>
                     </div>
@@ -31,7 +31,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px] card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px] card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <GrBus className='text-4xl md:text-5xl text-[#008D70]'></GrBus>
                     </div>
@@ -41,7 +41,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px] card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px] card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <FcHome className='text-4xl md:text-5xl text-[##D95247]'></FcHome>
                     </div>
@@ -51,7 +51,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px] card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px] card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <FcCollaboration className='text-4xl md:text-5xl text-[#59BCD1]'></FcCollaboration>
                     </div>
@@ -61,7 +61,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px] card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px] card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <FcLinux className='text-4xl md:text-5xl text-[#59BCD1]'></FcLinux>
                     </div>
@@ -71,7 +71,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px] card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px] card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <FcBusinessman className='text-4xl md:text-5xl text-[#59BCD1]'></FcBusinessman>
                     </div>
@@ -81,7 +81,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px] card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px] card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <FcBusinesswoman className='text-4xl md:text-5xl text-[#59BCD1]'></FcBusinesswoman>
                     </div>
@@ -91,7 +91,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px] card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px] card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <IoIosFootball className='text-4xl md:text-5xl text-[#59BCD1]'></IoIosFootball>
                     </div>
@@ -101,7 +101,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px] card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px] card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <FcBullish className='text-4xl md:text-5xl text-[#59BCD1]'></FcBullish>
                     </div>
@@ -111,7 +111,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px] card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px] card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <FcGraduationCap className='text-4xl md:text-5xl text-[#59BCD1]'></FcGraduationCap>
                     </div>
@@ -121,7 +121,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px] card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px] card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <FcMindMap className='text-4xl md:text-5xl text-[#59BCD1]'></FcMindMap>
                     </div>
@@ -131,7 +131,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px] card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px] card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <FcBiohazard className='text-4xl md:text-5xl text-[#59BCD1]'></FcBiohazard>
                     </div>
@@ -141,7 +141,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px] card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px] card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <FcSupport className='text-4xl md:text-5xl text-[#59BCD1]'></FcSupport>
                     </div>
@@ -151,7 +151,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px] card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px] card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                     <FcBriefcase className='text-4xl md:text-5xl text-[#59BCD1]'></FcBriefcase>
 
@@ -162,7 +162,7 @@ const Product = () => {
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
                 </div>
-               <div className='flex items-center gap-2 h-[130px] card-hover bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
+               <div className='flex items-center gap-2 h-[130px] card-hover cursor-pointer bg-slate-300 justify-center py-8 rounded-md ' style={{boxShadow:'1px 1px 5px #000'}}>
                     <div>
                         <FcGlobe className='text-4xl md:text-5xl text-[#59BCD1]'></FcGlobe>
                     </div>

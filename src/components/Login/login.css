@@ -1,0 +1,29 @@
+
+
+.bg-image {
+  
+    background-image: url("https://i.pinimg.com/736x/1a/5d/8c/1a5d8c05200b6f1d9a56d8133b09923f.jpg");
+  
+
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    
+    height: 600px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  /* Position text in the middle of the page/image */
+  .bg-text {
+   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+width: 100%;
+  }
