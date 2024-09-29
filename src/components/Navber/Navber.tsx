@@ -130,8 +130,7 @@ const Navber = () => {
                         className={open ? "items-center justify-between hidden w-full md:flex md:w-auto md:order-1" : "items-center justify-between  w-full md:flex md:w-auto md:order-1"}
                         id="navbar-sticky"
                     >
-                        <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
-
+                          <ul className="flex flex-wrap p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                             <li>
                                 <div className="button-container">
                                     <div className="btn"><Link href="/">Home</Link></div>
@@ -141,6 +140,12 @@ const Navber = () => {
                             <li>
                                 <div className="button-container">
                                     <div className="btn"><a href="#">Product</a></div>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div className="button-container">
+                                    <div className="btn"><a href="/addproduct">Add product</a></div>
                                 </div>
 
                             </li>

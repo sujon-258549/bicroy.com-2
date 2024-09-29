@@ -45,6 +45,8 @@
     z-index: 1;
     transition: 0.5s;
     backdrop-filter: blur(15px);
+    color: black;
+    font-weight: 700;
   }
   
   .button-container .btn:hover a {

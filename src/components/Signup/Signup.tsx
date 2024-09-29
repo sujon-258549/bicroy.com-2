@@ -4,10 +4,18 @@ import Link from 'next/link';
 
 
 const Signup = () => {
+
+    const handelDistrictAdd = (e) => {
+
+        const data = e.target.value;
+        console.log(data)
+
+
+    }
     return (
         <>
             <div
-                className="w-full bg-center bg-cover h-[45rem] mt-16  md:mt-20"
+                className="w-full bg-center bg-cover h-[50rem] mt-16  md:mt-20"
                 style={{
                     backgroundImage:
                         'url("https://i.pinimg.com/736x/1a/5d/8c/1a5d8c05200b6f1d9a56d8133b09923f.jpg")'
@@ -28,7 +36,7 @@ const Signup = () => {
                                     <div className="rounded-md shadow-sm">
                                         <div>
                                             <label className="sr-only" htmlFor="email">
-                                               Name
+                                                Name
                                             </label>
                                             <input
                                                 placeholder="Enter Your Name"
@@ -59,15 +67,123 @@ const Signup = () => {
                                                 Password
                                             </label>
                                             <input
-                                                placeholder="Enter Your Phone"
+                                                placeholder="Enter Your Phone Number"
                                                 className="appearance-none relative block w-full px-3 py-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                                                 required
-                                                autoComplete="current-password"
+
                                                 type="number"
                                                 name="Phone"
                                                 id="Phone"
                                             />
                                         </div>
+                                        <div className="mt-4">
+                                            <div className="mt-4">
+                                                <div className="mt-4">
+                                                    <select onChange={handelDistrictAdd} className="select select-info w-full border-gray-700 bg-gray-700 text-white">
+                                                        <option disabled selected>Select location</option>
+
+                                                        {/* Division: Barisal */}
+                                                        <optgroup label="Barisal">
+                                                            <option>Barguna District</option>
+                                                            <option>Barisal District</option>
+                                                            <option>Bhola District</option>
+                                                            <option>Jhalokati District</option>
+                                                            <option>Patuakhali District</option>
+                                                            <option>Pirojpur District</option>
+                                                        </optgroup>
+
+                                                        {/* Division: Chittagong */}
+                                                        <optgroup label="Chittagong">
+                                                            <option>Bandarban District</option>
+                                                            <option>Brahmanbaria District</option>
+                                                            <option>Chandpur District</option>
+                                                            <option>Chittagong District</option>
+                                                            <option>Comilla District</option>
+                                                            <option>Cox's Bazar District</option>
+                                                            <option>Feni District</option>
+                                                            <option>Khagrachari District</option>
+                                                            <option>Lakshmipur District</option>
+                                                            <option>Noakhali District</option>
+                                                            <option>Rangamati District</option>
+                                                        </optgroup>
+
+                                                        {/* Division: Dhaka */}
+                                                        <optgroup label="Dhaka">
+                                                            <option>Dhaka District</option>
+                                                            <option>Faridpur District</option>
+                                                            <option>Gazipur District</option>
+                                                            <option>Gopalganj District</option>
+                                                            <option>Kishoreganj District</option>
+                                                            <option>Madaripur District</option>
+                                                            <option>Manikganj District</option>
+                                                            <option>Munshiganj District</option>
+                                                            <option>Narayanganj District</option>
+                                                            <option>Narsingdi District</option>
+                                                            <option>Rajbari District</option>
+                                                            <option>Shariatpur District</option>
+                                                            <option>Tangail District</option>
+                                                        </optgroup>
+
+                                                        {/* Division: Khulna */}
+                                                        <optgroup label="Khulna">
+                                                            <option>Khulna District</option>
+                                                            <option>Bagerhat District</option>
+                                                            <option>Chuadanga District</option>
+                                                            <option>Jessore District</option>
+                                                            <option>Jhenaidah District</option>
+                                                            <option>Kushtia District</option>
+                                                            <option>Magura District</option>
+                                                            <option>Meherpur District</option>
+                                                            <option>Narail District</option>
+                                                            <option>Shatkhira District</option>
+                                                        </optgroup>
+
+                                                        {/* Division: Rajshahi */}
+                                                        <optgroup label="Rajshahi">
+                                                            <option>Bogra District</option>
+                                                            <option>Jaipurhat District</option>
+                                                            <option>Naogaon District</option>
+                                                            <option>Natore District</option>
+                                                            <option>Chapainawabganj District</option>
+                                                            <option>Pabna District</option>
+                                                            <option>Rajshahi District</option>
+                                                            <option>Sirajganj District</option>
+                                                        </optgroup>
+
+                                                        {/* Division: Rangpur */}
+                                                        <optgroup label="Rangpur">
+                                                            <option>Rangpur District</option>
+                                                            <option>Gaibandha District</option>
+                                                            <option>Kurigram District</option>
+                                                            <option>Nilphamari District</option>
+                                                            <option>Lalmonirhat District</option>
+                                                            <option>Dinajpur District</option>
+                                                            <option>Thakurgaon District</option>
+                                                            <option>Panchagarh District</option>
+                                                        </optgroup>
+
+                                                        {/* Division: Sylhet */}
+                                                        <optgroup label="Sylhet">
+                                                            <option>Habiganj District</option>
+                                                            <option>Maulvibazar District</option>
+                                                            <option>Sunamganj District</option>
+                                                            <option>Sylhet District</option>
+                                                        </optgroup>
+
+                                                        {/* Division: Mymensingh */}
+                                                        <optgroup label="Mymensingh">
+                                                            <option>Jamalpur District</option>
+                                                            <option>Mymensingh District</option>
+                                                            <option>Netrakona District</option>
+                                                            <option>Sherpur District</option>
+                                                        </optgroup>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
                                         <div className="mt-4">
                                             <label className="sr-only" htmlFor="password">
                                                 Password
