@@ -209,7 +209,7 @@ const Signup = () => {
                                                 autoComplete="current-password"
                                                 type="password"
                                                 name="conframpassword"
-                                                id="password"
+                                                id="conframpassword"
                                             />
                                         </div>
                                     </div>
