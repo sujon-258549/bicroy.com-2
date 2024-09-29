@@ -208,8 +208,7 @@ const Signup = () => {
                                                 required
                                                 autoComplete="current-password"
                                                 type="password"
-                                                name="conframpassword"
-                                               
+                                                name="conframpassword"                               
                                             />
                                         </div>
                                     </div>
