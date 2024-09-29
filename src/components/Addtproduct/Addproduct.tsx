@@ -33,7 +33,7 @@ const Addproduct = () => {
                                             id="name"
                                             className=" border bg-transparent border-black  text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-black dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                             placeholder="Type product name"
-                                            required=""
+                                           
                                         />
                                     </div>
                                     <div className="w-full">
@@ -49,7 +49,7 @@ const Addproduct = () => {
                                             id="brand"
                                             className=" border border-black  bg-transparent text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                             placeholder="Product brand"
-                                            required=""
+                                          
                                         />
                                     </div>
                                     <div className="w-full">
@@ -65,7 +65,7 @@ const Addproduct = () => {
                                             id="price"
                                             className=" border bg-transparent border-black  text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                             placeholder="$2999"
-                                            required=""
+                                           
                                         />
                                     </div>
                                     <div>
@@ -88,8 +88,8 @@ const Addproduct = () => {
                                             <option value="Property">Property</option>
                                             <option value="Home & Living">Home & Living</option>
                                             <option value="Pets & Animals">Pets & Animals</option>
-                                            <option value="Men's Fashion & Grooming">Men's Fashion & Grooming</option>
-                                            <option value="Women's Fashion & Beauty">Women's Fashion & Beauty</option>
+                                            <option value="Men's Fashion & Grooming">Mens Fashion & Grooming</option>
+                                            <option value="Women's Fashion & Beauty">Womens Fashion & Beauty</option>
                                             <option value="Hobbies, Sports & Kids">Hobbies, Sports & Kids</option>
                                             <option value="Business & Industry">Business & Industry</option>
                                             <option value="Education">Education</option>
@@ -333,7 +333,7 @@ const Addproduct = () => {
                                             rows={8}
                                             className="block p-2.5 w-full text-sm bg-transparent rounded-lg border border-black focus:ring-primary-500 focus:border-primary-500  dark:border-black dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                             placeholder="Your description here"
-                                            defaultValue={""}
+                                            
                                         />
                                     </div>
                                 </div>

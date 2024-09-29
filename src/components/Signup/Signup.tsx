@@ -5,13 +5,11 @@ import Link from 'next/link';
 
 const Signup = () => {
 
-    const handelDistrictAdd = (e) => {
-
-        const data = e.target.value;
-        console.log(data)
-
-
-    }
+    // const handleDistrictAdd = (e) => {
+    //     const data = e.target.value;
+    //     console.log(data);
+    // };
+    
     return (
         <>
             <div
@@ -79,7 +77,7 @@ const Signup = () => {
                                         <div className="mt-4">
                                             <div className="mt-4">
                                                 <div className="mt-4">
-                                                    <select onChange={handelDistrictAdd} className="select select-info w-full border-gray-700 bg-gray-700 text-white">
+                                                    <select  className="select select-info w-full border-gray-700 bg-gray-700 text-white">
                                                         <option disabled selected>Select location</option>
 
                                                         {/* Division: Barisal */}
@@ -99,7 +97,7 @@ const Signup = () => {
                                                             <option>Chandpur District</option>
                                                             <option>Chittagong District</option>
                                                             <option>Comilla District</option>
-                                                            <option>Cox's Bazar District</option>
+                                                            <option>Cox s Bazar District</option>
                                                             <option>Feni District</option>
                                                             <option>Khagrachari District</option>
                                                             <option>Lakshmipur District</option>

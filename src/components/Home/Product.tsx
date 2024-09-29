@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaHome } from 'react-icons/fa'
 import { FaMobileRetro } from 'react-icons/fa6'
 import { FcBiohazard, FcBriefcase, FcBullish, FcBusinessman, FcBusinesswoman, FcCollaboration, FcGlobe, FcGraduationCap, FcHome, FcLinux, FcMindMap, FcSupport } from 'react-icons/fc'
 import { GrBus, GrMonitor } from 'react-icons/gr'
@@ -76,7 +75,7 @@ const Product = () => {
                         <FcBusinessman className='text-4xl md:text-5xl text-[#59BCD1]'></FcBusinessman>
                     </div>
                     <div>
-                        <h4 className='text-[18px] font-semibold'>Men's Fashion & Grooming
+                        <h4 className='text-[18px] font-semibold'>Mens Fashion & Grooming
                         </h4>
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
@@ -86,7 +85,7 @@ const Product = () => {
                         <FcBusinesswoman className='text-4xl md:text-5xl text-[#59BCD1]'></FcBusinesswoman>
                     </div>
                     <div>
-                        <h4 className='text-[18px] font-semibold'>Women's Fashion & Beauty
+                        <h4 className='text-[18px] font-semibold'>Womens Fashion & Beauty
                         </h4>
                         <p className='text-[16px]'> 60,932 ads</p>
                     </div>
