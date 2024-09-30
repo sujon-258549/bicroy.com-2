@@ -151,13 +151,19 @@ const Navber = () => {
                             </li>
                             <li>
                                 <div className="button-container">
-                                    <div className="btn"><a href="#">My Product</a></div>
+                                    <div className="btn"><a href="/myproduct">My Product</a></div>
                                 </div>
 
                             </li>
                             <li>
                                 <div className="button-container">
                                     <div className="btn"><a href="#">Witch List</a></div>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div className="button-container">
+                                    <div className="btn"><Link href="/user">All User</Link></div>
                                 </div>
 
                             </li>

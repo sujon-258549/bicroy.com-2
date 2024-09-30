@@ -5,11 +5,16 @@ import Link from 'next/link';
 
 const Signup = () => {
 
-    // const handleDistrictAdd = (e) => {
+    // const handleDistrictAdd = (e: string) => {
     //     const data = e.target.value;
     //     console.log(data);
     // };
-    
+
+    const handleDistrictAdd = (e :React.ChangeEvent<HTMLSelectElement> ) => {
+        const data = e.target.value; // Accessing the input's value
+        console.log(data);
+    };
+
     return (
         <>
             <div
@@ -77,7 +82,7 @@ const Signup = () => {
                                         <div className="mt-4">
                                             <div className="mt-4">
                                                 <div className="mt-4">
-                                                    <select  className="select select-info w-full border-gray-700 bg-gray-700 text-white">
+                                                    <select onChange={handleDistrictAdd} className="select select-info w-full border-gray-700 bg-gray-700 text-white">
                                                         <option disabled selected>Select location</option>
 
                                                         {/* Division: Barisal */}
@@ -206,7 +211,7 @@ const Signup = () => {
                                                 required
                                                 autoComplete="current-password"
                                                 type="password"
-                                                name="conframpassword"                               
+                                                name="conframpassword"
                                             />
                                         </div>
                                     </div>
