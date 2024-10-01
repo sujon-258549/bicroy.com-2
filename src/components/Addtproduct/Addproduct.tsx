@@ -9,7 +9,7 @@ const Addproduct = () => {
             backgroundImage:
                 'url("https://i.pinimg.com/736x/1a/5d/8c/1a5d8c05200b6f1d9a56d8133b09923f.jpg")', backgroundRepeat:'no-repeat',backgroundPosition:'center', backgroundSize:'cover'
         }}>
-            <section className='max-w-6xl mx-auto px-4 pt-20 pb-10' >
+            <section className='max-w-6xl mx-auto px-4 pt-24 pb-1' >
 
 
                 <div>

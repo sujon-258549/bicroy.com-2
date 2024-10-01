@@ -1,6 +1,6 @@
 /* From Uiverse.io by csemszepp */ 
 .navber-body{
-  z-index: 999;
+  z-index: 990;
 }
 
 .button-container {
@@ -8,13 +8,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    z-index: 999;
   }
   
   .button-container .btn {
     position: relative;
     top: 0;
     left: 0;
-    width: 120px;
+    width: 100px;
     height: 40px;
     margin: 0;
     display: flex;
@@ -113,7 +114,7 @@
   }
   
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     .button-container .btn{
        margin-bottom: 20px;
        width: 100%;

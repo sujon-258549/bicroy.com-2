@@ -8,7 +8,7 @@ export default function Home() {
 
     <>
       <div className="bg-[#149777]">
-        <div className="max-w-6xl mx-auto mt-16 md:mt-20">
+        <div className="max-w-6xl mx-auto pt-16 md:pt-20">
           <div className='flex justify-center md:pt-8 pt-5 pb-2'>
             <Modal></Modal>
 

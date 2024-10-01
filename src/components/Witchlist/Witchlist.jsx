@@ -1,7 +1,7 @@
 import Heading from "../CommonComponent/Heading";
 
 
-const Myproduct = () => {
+const Witchlist = () => {
     return (
 
 
@@ -9,7 +9,7 @@ const Myproduct = () => {
             <section className="pt-32 pb-10">
                 <div className="p-5 rounded-md" style={{ boxShadow: '1px 1px 40px #149777' }}>
                     <>
-                        <Heading headingText="My Product" />
+                       <Heading headingText={'Witch list'}/>
                         <section className=" flex items-center">
                             <div className="max-w-screen-xl px-4 mx-auto lg:px-12 w-full">
                                 {/* Start coding here */}
@@ -247,4 +247,4 @@ const Myproduct = () => {
     );
 };
 
-export default Myproduct;
+export default Witchlist;

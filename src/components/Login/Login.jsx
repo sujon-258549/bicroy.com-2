@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <>
       <div
-        className="w-full bg-center bg-cover h-[38rem] mt-16  md:mt-20"
+        className="w-full bg-center bg-cover h-[38rem] pt-16  md:pt-20"
         style={{
           backgroundImage:
             'url("https://i.pinimg.com/736x/1a/5d/8c/1a5d8c05200b6f1d9a56d8133b09923f.jpg")'

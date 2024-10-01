@@ -1,10 +1,13 @@
 "use client"
 import Link from 'next/link'
+import Heading from '../CommonComponent/Heading'
 
 const Alluser = () => {
     return (
         <section className='max-w-6xl mx-auto pt-10 md:pt-20 px-4'>
             <div className=" md:my-14 mb-8 mt-16 rounded-md p-5" style={{boxShadow:'1px 1px 10px'}}>
+
+                <Heading headingText='All User'/>
                
                 <div className="relative flex flex-col w-full h-full text-slate-700 bg-white rounded-xl bg-clip-border">
                     <div className="relative mx-4 mt-4 overflow-hidden text-slate-700 bg-white rounded-none bg-clip-border">
