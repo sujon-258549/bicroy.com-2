@@ -1,0 +1,19 @@
+.shadow1 {
+    box-shadow: 1px 1px 5px;
+    border-radius: 10px 0px 0px 10px;
+    padding: 30px;
+}
+
+.shadow2 {
+    box-shadow: 1px 1px 5px;
+    border-radius: 0px 10px 10px 0px;
+    padding: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .shadow1, .shadow2 {
+        box-shadow: 1px 1px 5px;
+        border-radius: 10px;
+        
+    }
+}

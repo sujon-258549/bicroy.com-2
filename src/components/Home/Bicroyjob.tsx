@@ -1,14 +1,14 @@
 "use client"
 
-import { FiPlus } from "react-icons/fi"
+import { FiChevronRight, FiPlus } from "react-icons/fi"
 
-
+import './bicroy.css'
 
 const Bicroyjob = () => {
     return (
         <div className='max-w-6xl mx-auto p-4'>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-5' style={}>
-                <div className='flex gap-5 items-center'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-1'>
+                <div className='flex gap-5 items-center shadow1'>
                     <div>
                         <img className=" w-[150px]" src="./image/Screenshot_3.png" alt="" />
                     </div>
@@ -21,9 +21,9 @@ const Bicroyjob = () => {
                         <button className="items-center bg-[#FFC800] flex px-5 font-bold pt-1 pb-2 rounded-full"> <FiPlus className="mr-1 bg-[#673500] text-white rounded-full mt-[3px]"></FiPlus> Post your ad for free </button>
                     </div>
                 </div>
-                <div className='border-l'>
+                <div className='shadow2'>
                     <div>
-                        <img className="w-[150px]" src="./image/Screenshot_1.png" alt="" />
+                        <img className="w-[150px] -ml-3" src="./image/Screenshot_1.png" alt="" />
                     </div>
                     <div>
                         
@@ -32,11 +32,8 @@ const Bicroyjob = () => {
                             Get access to 800k+ CVs or browse through 800+ job vacancies!</p>
                             
                         </div>
-                        <button className="items-center bg-[#FFC800] flex px-5 font-bold pt-1 pb-2 rounded-full"> <FiPlus className="mr-1 bg-[#673500] text-white rounded-full mt-[3px]"></FiPlus> Post your ad for free </button>
+                        <button className="items-center text-white bg-[#0074BA] flex px-5 font-bold pt-1 pb-2 rounded-full">  Post your ad for free <FiChevronRight className="ml-2 bg-[#fff] text-black rounded-full mt-[3px]"></FiChevronRight></button>
                     </div>
-                </div>
-                <div>
-
                 </div>
             </div>
         </div>

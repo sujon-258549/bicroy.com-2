@@ -1,4 +1,5 @@
 import Bicroyjob from "@/components/Home/Bicroyjob";
+import Card from "@/components/Home/Card";
 import Product from "@/components/Home/Product";
 import Search from "@/components/Home/Search";
 import Modal from "@/components/Navber/Modal";
@@ -20,6 +21,7 @@ export default function Home() {
       </div>
       <Product></Product>
       <Bicroyjob></Bicroyjob>
+      <Card></Card>
     </>
   );
 }
