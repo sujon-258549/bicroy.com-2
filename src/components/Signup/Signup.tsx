@@ -1,60 +1,98 @@
 "use client";
 
+import axios from 'axios';
 import Link from 'next/link';
+import { useState } from 'react';
+import Swal from 'sweetalert2';
 
 
 const Signup = () => {
 
-    // const handleDistrictAdd = (e: string) => {
-    //     const data = e.target.value;
-    //     console.log(data);
-    // };
+    const [location, setLocation] = useState()
+    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const locationData = e.target.value; // Accessing the input's value
+        setLocation(locationData)
 
-    const handleDistrictAdd = (e :React.ChangeEvent<HTMLSelectElement> ) => {
-        const data = e.target.value; // Accessing the input's value
-        console.log(data);
     };
+
+    const handelSignIn = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault(); // Prevent default form submission
+        const formData = new FormData(e.currentTarget);
+
+        // Extract values from the form
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const phone = formData.get('Phone');
+        // const district = formData.get('district');
+        const password = formData.get('password');
+        const confirmPassword = formData.get('conframpassword');
+
+        // Create a user info object
+        const userInfo = {
+            name,
+            email,
+            phone,
+            location,
+            password,
+            confirmPassword,
+        };
+       
+            axios.post('http://localhost:3000/api/userinfo', userInfo)
+                .then(response => {
+                    if (response.status === 200) {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Success",
+                            text: "Successfully created user",
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error("There was an error!", error);
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "There was an issue creating the user.",
+                    });
+                });
+
+       
+    };
+
 
     return (
         <>
             <div
-                className="w-full bg-center bg-cover h-[57rem] pt-16  md:pt-20"
+                className="w-full bg-center bg-cover h-[57rem] pt-16 md:pt-20"
                 style={{
-                    backgroundImage:
-                        'url("https://i.pinimg.com/736x/1a/5d/8c/1a5d8c05200b6f1d9a56d8133b09923f.jpg")'
+                    backgroundImage: 'url("https://i.pinimg.com/736x/1a/5d/8c/1a5d8c05200b6f1d9a56d8133b09923f.jpg")'
                 }}
             >
-                <div className="flex items-center justify-center w-full h-full px-4 md:px-0 bg-[#000000ac]" >
-                    <div className="max-w-lg w-full mx-auto pt-8 md:pt-24 pb-10 md:pb-20 login-content" >
+                <div className="flex items-center justify-center w-full h-full px-4 md:px-0 bg-[#000000ac]">
+                    <div className="max-w-lg w-full mx-auto pt-8 md:pt-24 pb-10 md:pb-20 login-content">
                         <div
                             style={{ boxShadow: '1px 1px 20px #6DC5D5' }}
-                            className="bg-gray-800 rounded-lg shadow-xl  overflow-hidden"
+                            className="bg-gray-800 rounded-lg shadow-xl overflow-hidden"
                         >
                             <div className="p-8">
-                                <h2 className="text-center text-3xl font-extrabold text-white">
-                                    Welcome Back
-                                </h2>
+                                <h2 className="text-center text-3xl font-extrabold text-white">Welcome Back</h2>
                                 <p className="mt-4 text-center text-gray-400">Sign in to continue</p>
-                                <form method="POST" action="#" className="mt-8 space-y-6">
+                                <form onSubmit={handelSignIn} className="mt-8 space-y-6">
                                     <div className="rounded-md shadow-sm">
                                         <div>
-                                            <label className="sr-only" htmlFor="email">
-                                                Name
-                                            </label>
+                                            <label className="sr-only" htmlFor="name">Name</label>
                                             <input
                                                 placeholder="Enter Your Name"
                                                 className="appearance-none relative block w-full px-3 py-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                                                 required
-                                                autoComplete="email"
+                                                autoComplete="name"
                                                 type="text"
                                                 name="name"
                                                 id="name"
                                             />
                                         </div>
                                         <div className="mt-4">
-                                            <label className="sr-only" htmlFor="email">
-                                                Email address
-                                            </label>
+                                            <label className="sr-only" htmlFor="email">Email address</label>
                                             <input
                                                 placeholder="Email address"
                                                 className="appearance-none relative block w-full px-3 py-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
@@ -66,14 +104,11 @@ const Signup = () => {
                                             />
                                         </div>
                                         <div className="mt-4">
-                                            <label className="sr-only" htmlFor="password">
-                                                Password
-                                            </label>
+                                            <label className="sr-only" htmlFor="Phone">Phone Number</label>
                                             <input
                                                 placeholder="Enter Your Phone Number"
                                                 className="appearance-none relative block w-full px-3 py-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                                                 required
-
                                                 type="number"
                                                 name="Phone"
                                                 id="Phone"
@@ -81,116 +116,98 @@ const Signup = () => {
                                         </div>
                                         <div className="mt-4">
                                             <div className="mt-4">
-                                                <div className="mt-4">
-                                                    <select onChange={handleDistrictAdd} className="select select-info w-full border-gray-700 bg-gray-700 text-white">
-                                                        <option disabled selected>Select location</option>
-
-                                                        {/* Division: Barisal */}
-                                                        <optgroup label="Barisal">
-                                                            <option>Barguna District</option>
-                                                            <option>Barisal District</option>
-                                                            <option>Bhola District</option>
-                                                            <option>Jhalokati District</option>
-                                                            <option>Patuakhali District</option>
-                                                            <option>Pirojpur District</option>
-                                                        </optgroup>
-
-                                                        {/* Division: Chittagong */}
-                                                        <optgroup label="Chittagong">
-                                                            <option>Bandarban District</option>
-                                                            <option>Brahmanbaria District</option>
-                                                            <option>Chandpur District</option>
-                                                            <option>Chittagong District</option>
-                                                            <option>Comilla District</option>
-                                                            <option>Cox s Bazar District</option>
-                                                            <option>Feni District</option>
-                                                            <option>Khagrachari District</option>
-                                                            <option>Lakshmipur District</option>
-                                                            <option>Noakhali District</option>
-                                                            <option>Rangamati District</option>
-                                                        </optgroup>
-
-                                                        {/* Division: Dhaka */}
-                                                        <optgroup label="Dhaka">
-                                                            <option>Dhaka District</option>
-                                                            <option>Faridpur District</option>
-                                                            <option>Gazipur District</option>
-                                                            <option>Gopalganj District</option>
-                                                            <option>Kishoreganj District</option>
-                                                            <option>Madaripur District</option>
-                                                            <option>Manikganj District</option>
-                                                            <option>Munshiganj District</option>
-                                                            <option>Narayanganj District</option>
-                                                            <option>Narsingdi District</option>
-                                                            <option>Rajbari District</option>
-                                                            <option>Shariatpur District</option>
-                                                            <option>Tangail District</option>
-                                                        </optgroup>
-
-                                                        {/* Division: Khulna */}
-                                                        <optgroup label="Khulna">
-                                                            <option>Khulna District</option>
-                                                            <option>Bagerhat District</option>
-                                                            <option>Chuadanga District</option>
-                                                            <option>Jessore District</option>
-                                                            <option>Jhenaidah District</option>
-                                                            <option>Kushtia District</option>
-                                                            <option>Magura District</option>
-                                                            <option>Meherpur District</option>
-                                                            <option>Narail District</option>
-                                                            <option>Shatkhira District</option>
-                                                        </optgroup>
-
-                                                        {/* Division: Rajshahi */}
-                                                        <optgroup label="Rajshahi">
-                                                            <option>Bogra District</option>
-                                                            <option>Jaipurhat District</option>
-                                                            <option>Naogaon District</option>
-                                                            <option>Natore District</option>
-                                                            <option>Chapainawabganj District</option>
-                                                            <option>Pabna District</option>
-                                                            <option>Rajshahi District</option>
-                                                            <option>Sirajganj District</option>
-                                                        </optgroup>
-
-                                                        {/* Division: Rangpur */}
-                                                        <optgroup label="Rangpur">
-                                                            <option>Rangpur District</option>
-                                                            <option>Gaibandha District</option>
-                                                            <option>Kurigram District</option>
-                                                            <option>Nilphamari District</option>
-                                                            <option>Lalmonirhat District</option>
-                                                            <option>Dinajpur District</option>
-                                                            <option>Thakurgaon District</option>
-                                                            <option>Panchagarh District</option>
-                                                        </optgroup>
-
-                                                        {/* Division: Sylhet */}
-                                                        <optgroup label="Sylhet">
-                                                            <option>Habiganj District</option>
-                                                            <option>Maulvibazar District</option>
-                                                            <option>Sunamganj District</option>
-                                                            <option>Sylhet District</option>
-                                                        </optgroup>
-
-                                                        {/* Division: Mymensingh */}
-                                                        <optgroup label="Mymensingh">
-                                                            <option>Jamalpur District</option>
-                                                            <option>Mymensingh District</option>
-                                                            <option>Netrakona District</option>
-                                                            <option>Sherpur District</option>
-                                                        </optgroup>
-                                                    </select>
-                                                </div>
-
+                                                <select
+                                                    // Set value from state
+                                                    onChange={handleChange} // Handle change event
+                                                    className="select select-info w-full border-gray-700 bg-gray-700 text-white"
+                                                >
+                                                    <option value="" disabled>Select location</option>
+                                                    {/* District options */}
+                                                    <optgroup label="Barisal">
+                                                        <option value="Barguna District">Barguna District</option>
+                                                        <option value="Barisal District">Barisal District</option>
+                                                        <option value="Bhola District">Bhola District</option>
+                                                        <option value="Jhalokati District">Jhalokati District</option>
+                                                        <option value="Patuakhali District">Patuakhali District</option>
+                                                        <option value="Pirojpur District">Pirojpur District</option>
+                                                    </optgroup>
+                                                    <optgroup label="Chittagong">
+                                                        <option value="Bandarban District">Bandarban District</option>
+                                                        <option value="Brahmanbaria District">Brahmanbaria District</option>
+                                                        <option value="Chandpur District">Chandpur District</option>
+                                                        <option value="Chittagong District">Chittagong District</option>
+                                                        <option value="Comilla District">Comilla District</option>
+                                                        <option value="Cox's Bazar District">Cox's Bazar District</option>
+                                                        <option value="Feni District">Feni District</option>
+                                                        <option value="Khagrachari District">Khagrachari District</option>
+                                                        <option value="Lakshmipur District">Lakshmipur District</option>
+                                                        <option value="Noakhali District">Noakhali District</option>
+                                                        <option value="Rangamati District">Rangamati District</option>
+                                                    </optgroup>
+                                                    <optgroup label="Dhaka">
+                                                        <option value="Dhaka District">Dhaka District</option>
+                                                        <option value="Faridpur District">Faridpur District</option>
+                                                        <option value="Gazipur District">Gazipur District</option>
+                                                        <option value="Gopalganj District">Gopalganj District</option>
+                                                        <option value="Kishoreganj District">Kishoreganj District</option>
+                                                        <option value="Madaripur District">Madaripur District</option>
+                                                        <option value="Manikganj District">Manikganj District</option>
+                                                        <option value="Munshiganj District">Munshiganj District</option>
+                                                        <option value="Narayanganj District">Narayanganj District</option>
+                                                        <option value="Narsingdi District">Narsingdi District</option>
+                                                        <option value="Rajbari District">Rajbari District</option>
+                                                        <option value="Shariatpur District">Shariatpur District</option>
+                                                        <option value="Tangail District">Tangail District</option>
+                                                    </optgroup>
+                                                    <optgroup label="Khulna">
+                                                        <option value="Khulna District">Khulna District</option>
+                                                        <option value="Bagerhat District">Bagerhat District</option>
+                                                        <option value="Chuadanga District">Chuadanga District</option>
+                                                        <option value="Jessore District">Jessore District</option>
+                                                        <option value="Jhenaidah District">Jhenaidah District</option>
+                                                        <option value="Kushtia District">Kushtia District</option>
+                                                        <option value="Magura District">Magura District</option>
+                                                        <option value="Meherpur District">Meherpur District</option>
+                                                        <option value="Narail District">Narail District</option>
+                                                        <option value="Shatkhira District">Shatkhira District</option>
+                                                    </optgroup>
+                                                    <optgroup label="Rajshahi">
+                                                        <option value="Bogra District">Bogra District</option>
+                                                        <option value="Jaipurhat District">Jaipurhat District</option>
+                                                        <option value="Naogaon District">Naogaon District</option>
+                                                        <option value="Natore District">Natore District</option>
+                                                        <option value="Chapainawabganj District">Chapainawabganj District</option>
+                                                        <option value="Pabna District">Pabna District</option>
+                                                        <option value="Rajshahi District">Rajshahi District</option>
+                                                        <option value="Sirajganj District">Sirajganj District</option>
+                                                    </optgroup>
+                                                    <optgroup label="Rangpur">
+                                                        <option value="Rangpur District">Rangpur District</option>
+                                                        <option value="Gaibandha District">Gaibandha District</option>
+                                                        <option value="Kurigram District">Kurigram District</option>
+                                                        <option value="Nilphamari District">Nilphamari District</option>
+                                                        <option value="Lalmonirhat District">Lalmonirhat District</option>
+                                                        <option value="Dinajpur District">Dinajpur District</option>
+                                                        <option value="Thakurgaon District">Thakurgaon District</option>
+                                                        <option value="Panchagarh District">Panchagarh District</option>
+                                                    </optgroup>
+                                                    <optgroup label="Sylhet">
+                                                        <option value="Habiganj District">Habiganj District</option>
+                                                        <option value="Maulvibazar District">Maulvibazar District</option>
+                                                        <option value="Sunamganj District">Sunamganj District</option>
+                                                        <option value="Sylhet District">Sylhet District</option>
+                                                    </optgroup>
+                                                    <optgroup label="Mymensingh">
+                                                        <option value="Jamalpur District">Jamalpur District</option>
+                                                        <option value="Mymensingh District">Mymensingh District</option>
+                                                        <option value="Netrakona District">Netrakona District</option>
+                                                        <option value="Sherpur District">Sherpur District</option>
+                                                    </optgroup>
+                                                </select>
                                             </div>
-
                                         </div>
-
                                         <div className="mt-4">
-                                            <label className="sr-only" htmlFor="password">
-                                                Password
-                                            </label>
+                                            <label className="sr-only" htmlFor="password">Password</label>
                                             <input
                                                 placeholder="Password"
                                                 className="appearance-none relative block w-full px-3 py-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
@@ -202,11 +219,9 @@ const Signup = () => {
                                             />
                                         </div>
                                         <div className="mt-4">
-                                            <label className="sr-only" htmlFor="password">
-                                                Password
-                                            </label>
+                                            <label className="sr-only" htmlFor="conframpassword">Confirm Password</label>
                                             <input
-                                                placeholder="Confram Password"
+                                                placeholder="Confirm Password"
                                                 className="appearance-none relative block w-full px-3 py-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                                                 required
                                                 autoComplete="current-password"
@@ -223,18 +238,12 @@ const Signup = () => {
                                                 name="remember-me"
                                                 id="remember-me"
                                             />
-                                            <label
-                                                className="ml-2 block text-sm text-gray-400"
-                                                htmlFor="remember-me"
-                                            >
+                                            <label className="ml-2 block text-sm text-gray-400" htmlFor="remember-me">
                                                 Remember me
                                             </label>
                                         </div>
                                         <div className="text-sm">
-                                            <a
-                                                className="font-medium text-indigo-500 hover:text-indigo-400"
-                                                href="#"
-                                            >
+                                            <a className="font-medium text-indigo-500 hover:text-indigo-400" href="#">
                                                 Forgot your password?
                                             </a>
                                         </div>
@@ -250,11 +259,8 @@ const Signup = () => {
                                 </form>
                             </div>
                             <div className="px-8 py-4 bg-gray-700 text-center">
-                                <span className="text-gray-400">Alrady Have Acount</span>
-                                <Link
-                                    className="font-medium text-indigo-500 hover:text-indigo-400"
-                                    href="/login"
-                                >
+                                <span className="text-gray-400">Already Have An Account?</span>
+                                <Link className="font-medium text-indigo-500 hover:text-indigo-400" href="/login">
                                     Login
                                 </Link>
                             </div>
@@ -262,8 +268,6 @@ const Signup = () => {
                     </div>
                 </div>
             </div>
-
-
         </>
     );
 };
