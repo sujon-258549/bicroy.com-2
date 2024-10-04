@@ -36,6 +36,8 @@ const Signup = () => {
             password,
             confirmPassword,
         };
+
+       
        
             axios.post('http://localhost:3000/api/userinfo', userInfo)
                 .then(response => {

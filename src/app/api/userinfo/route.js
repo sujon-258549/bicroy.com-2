@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import dbClient from "../../../db/dbClient";
+const bcrypt = require('bcrypt');
 
 export async function POST(req) {
     try {
@@ -11,8 +12,13 @@ export async function POST(req) {
         const body = await req.json();
         const existingUser = await collection.findOne({ email: body.email });
 
+        const hashpassword = bcrypt.hashSync(body.password, 10);
+        const hashconfirmPassword = bcrypt.hashSync(body.confirmPassword, 10);
+
+
+
         if (!existingUser) { // Check if user does not exist
-            await collection.insertOne(body); // Insert the user
+            await collection.insertOne({...body,password:hashpassword, confirmPassword:hashconfirmPassword}); // Insert the user
 
             return NextResponse.json({
                 message: "User inserted successfully"
