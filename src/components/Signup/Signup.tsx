@@ -11,7 +11,7 @@ const Signup = () => {
     const [location, setLocation] = useState()
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const locationData = e.target.value; // Accessing the input's value
-        setLocation(locationData)
+        setLocation(locationData);
 
     };
 
