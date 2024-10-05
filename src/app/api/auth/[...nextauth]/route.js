@@ -2,6 +2,7 @@ import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import dbClient from "../../../../db/dbClient"
 import bcrypt from "bcrypt";
+import GoogleProvider from "next-auth/providers/google";
 
 const handler = NextAuth({
     session: {
@@ -43,6 +44,10 @@ const handler = NextAuth({
                 }
             }
             
+        }),
+        GoogleProvider({
+            clientId: process.env.NEXT_PUBSICT_GOOGLE_CLIENT_ID,  
+            clientSecret: process.env.NEXT_PUBSICT_GOOGLE_CLIENT_SECRET 
         })
     ],
     collbacks: {},

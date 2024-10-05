@@ -1,13 +1,37 @@
-import React from 'react'
+
+
+"use client"
+
+import React, { useState } from 'react'
 
 import './addproduct.css'
 
 const Addproduct = () => {
+
+    const [category , setCategory] = useState()
+
+    const handleCategory = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const dataValue = e.target.value;
+        setCategory(dataValue);
+    };
+    
+
+    const handelProductAdd = (e) => {
+        const name = e.target.name.value
+
+    }
+
+
+
+
+
+
+
     return (
 
-        <section  style={{
+        <section style={{
             backgroundImage:
-                'url("https://i.pinimg.com/736x/1a/5d/8c/1a5d8c05200b6f1d9a56d8133b09923f.jpg")', backgroundRepeat:'no-repeat',backgroundPosition:'center', backgroundSize:'cover'
+                'url("https://i.pinimg.com/736x/1a/5d/8c/1a5d8c05200b6f1d9a56d8133b09923f.jpg")', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'
         }}>
             <section className='max-w-6xl mx-auto px-4 pt-24 pb-1' >
 
@@ -18,7 +42,7 @@ const Addproduct = () => {
                             <h2 className="mb-4 text-white md:text-4xl py10 text-2xl text-center font-bold  ">
                                 Add a new product
                             </h2>
-                            <form action="#">
+                            <form onSubmit={handelProductAdd}>
                                 <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 ">
                                     <div className="sm:col-span-2">
                                         <label
@@ -33,7 +57,7 @@ const Addproduct = () => {
                                             id="name"
                                             className=" border bg-transparent border-black  text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-black dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                             placeholder="Type product name"
-                                           
+
                                         />
                                     </div>
                                     <div className="w-full">
@@ -49,7 +73,7 @@ const Addproduct = () => {
                                             id="brand"
                                             className=" border border-black  bg-transparent text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                             placeholder="Product brand"
-                                          
+
                                         />
                                     </div>
                                     <div className="w-full">
@@ -65,7 +89,7 @@ const Addproduct = () => {
                                             id="price"
                                             className=" border bg-transparent border-black  text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                             placeholder="$2999"
-                                           
+
                                         />
                                     </div>
                                     <div>
@@ -75,7 +99,7 @@ const Addproduct = () => {
                                         >
                                             Category
                                         </label>
-                                        <select
+                                        <select onChange={handleCategory}
                                             id="category"
                                             className=" border border-black  text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block bg-transparent w-full p-2.5  dark:border-black dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                         >
@@ -333,7 +357,7 @@ const Addproduct = () => {
                                             rows={8}
                                             className="block p-2.5 w-full text-sm bg-transparent rounded-lg border border-black focus:ring-primary-500 focus:border-primary-500  dark:border-black dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                             placeholder="Your description here"
-                                            
+
                                         />
                                     </div>
                                 </div>

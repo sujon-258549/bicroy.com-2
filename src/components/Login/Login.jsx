@@ -135,8 +135,11 @@ import React from 'react';
 import Link from 'next/link';
 import './login.css';
 import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import SosalLogin from '../SosalLogin/SosalLogin';
 
 const Login = () => {
+  const router = useRouter()
   const handleLogin = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -147,12 +150,14 @@ const Login = () => {
       password,
       redirect: false,
     });
-    console.log(result)
+    if (result.status === 200) {
+      router.push('/')
+    }
   };
 
   return (
     <div
-      className="w-full bg-center bg-cover h-[38rem] pt-16 md:pt-20"
+      className="w-full bg-center bg-cover h-[48rem] pt-16 md:pt-20"
       style={{
         backgroundImage:
           'url("https://i.pinimg.com/736x/1a/5d/8c/1a5d8c05200b6f1d9a56d8133b09923f.jpg")',
@@ -233,6 +238,7 @@ const Login = () => {
                   </button>
                 </div>
               </form>
+              <SosalLogin></SosalLogin>
             </div>
             <div className="px-8 py-4 bg-gray-700 text-center">
               <span className="text-gray-400">Don't have an account?</span>
