@@ -52,7 +52,7 @@ const ProductDetailPage = ({ params }) => {
                     <p><strong>Message:</strong> {product.message}</p>
                     
                     <button>
-                      Add  Witch list
+                      Add Witch list
                     </button>
                 </div>
             </div>
