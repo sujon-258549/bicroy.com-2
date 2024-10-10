@@ -5,6 +5,7 @@ import Loding from '../Loding/Loding';
 
 import './productc.css'
 import Heading from '../CommonComponent/Heading';
+import Link from 'next/link';
 
 
 const AllProduct = () => {
@@ -52,9 +53,9 @@ const AllProduct = () => {
 
                         </div>
                         <div className='flex justify-end'>
-                            <button className="bg-sky-700 font-extrabold p-2 px-6 rounded-xl hover:bg-sky-500 transition-colors">
+                            <Link href={`allproducts/${product._id}`} className="bg-sky-700 font-extrabold p-2 px-6 rounded-xl hover:bg-sky-500 transition-colors">
                                 See more
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 ))}

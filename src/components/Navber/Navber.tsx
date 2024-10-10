@@ -52,10 +52,10 @@ const Navber = () => {
                                     </li>
 
 
-                                    {session.data?.user?.email && (
+                                    {/* {session.data?.user?.email && ( */}
 
                                         <>
-                                            <AuthProvider>
+                                            {/* <AuthProvider> */}
 
                                                 <li>
                                                     <div className="button-container">
@@ -85,10 +85,10 @@ const Navber = () => {
                                                         </div>
                                                     </div>
                                                 </li>
-                                            </AuthProvider>
+                                            {/* </AuthProvider> */}
                                         </>
 
-                                    )}
+                                    {/* )} */}
 
 
 
