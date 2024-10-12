@@ -35,6 +35,10 @@ const ProductDetailPage = ({ params }) => {
         return <div>Product not found</div>;
     }
 
+    const handelwishlist = () => {
+
+    }
+
     return (
 
         <section className='max-w-4xl mx-auto pt-40 pb-10 px-4 items-center'>
@@ -50,9 +54,9 @@ const ProductDetailPage = ({ params }) => {
                     <p><strong>Category:</strong> {product.category}</p>
                     <p><strong>Subcategory:</strong> {product.subcategory}</p>
                     <p><strong>Message:</strong> {product.message}</p>
-                    
-                    <button>
-                      Add Witch list
+
+                    <button onClick={handelwishlist}>
+                        Add Witch list
                     </button>
                 </div>
             </div>
