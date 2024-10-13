@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "vercel-build": 'echo hello'
+    "lint": "next lint"
+   
   },
   "dependencies": {
     "@szhsin/react-accordion": "^1.2.5",
