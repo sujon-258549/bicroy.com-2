@@ -3,9 +3,22 @@
 import Loding from '@/components/Loding/Loding';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import './id.css'
+import './id.css';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
+
+// Define the Product interface
+interface Product {
+    _id: string;
+    productname: string;
+    brand: string;
+    price: number;
+    phone: string;
+    category: string;
+    subcategory: string;
+    photo: string;
+    message: string;
+}
 
 interface ProductDetailPageProps {
     params: {
@@ -15,8 +28,8 @@ interface ProductDetailPageProps {
 
 const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ params }) => {
     const router = useRouter();
-    const session = useSession();
-    const [product, setProduct] = useState(null); // Initialize as null
+    const { data: session } = useSession();
+    const [product, setProduct] = useState<Product | null>(null); // Initialize as null with Product type
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -25,8 +38,8 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ params }) => {
                 const response = await axios.get('http://localhost:3000/api/productget');
 
                 // Find the specific product by _id
-                const foundProduct = response?.data?.data?.find(product => product._id === params._id);
-                setProduct(foundProduct);
+                const foundProduct = response?.data?.data?.find((product: Product) => product._id === params.id);
+                setProduct(foundProduct || null); // Set product or null if not found
             } catch (err) {
                 console.log(err);
             } finally {
@@ -35,7 +48,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ params }) => {
         };
 
         fetchProducts();
-    }, [params._id]); // Add params._id as a dependency
+    }, [params.id]); // Ensure the correct param is used
 
     if (loading) {
         return <div><Loding /></div>;
@@ -45,9 +58,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ params }) => {
         return <div>Product not found</div>;
     }
 
-
-
-    const email = session?.data?.user?.email;
+    const email = session?.user?.email;
 
     const handleWishlist = async () => {
         const { productname, brand, price, phone, category, subcategory, photo, message } = product;
@@ -77,7 +88,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ params }) => {
         <section className='max-w-4xl mx-auto pt-40 pb-10 px-4 items-center'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center p-5 rounded-md' style={{ boxShadow: '1px 1px 50px #149777' }}>
                 <div>
-                    <img src={product.photo} className='w-full rounded-md ' alt={product.productname} />
+                    <img src={product.photo} className='w-full rounded-md' alt={product.productname} />
                 </div>
                 <div className='space-y-4'>
                     <h1 className='text-3xl font-bold'>Name: {product.productname}</h1>

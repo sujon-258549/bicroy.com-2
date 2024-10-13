@@ -13,6 +13,17 @@ const MyProduct = () => {
     const [loading, setLoading] = useState(true);
     const isMounted = useRef(true); // Flag to track if component is still mounted
 
+    interface Product {
+        _id: string;
+        productname: string;
+        brand: string;
+        price: number;
+        phone: string;
+        category: string;
+        subcategory: string;
+        photo: string;
+        message: string;
+    }
     useEffect(() => {
         if (!email) return; // Ensure email is available before making the API call
 
@@ -138,7 +149,7 @@ const MyProduct = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {myProduct.map(product => (
+                                    {myProduct.map((product: Product) => (
                                         <tr key={product._id}>
                                             <th>
                                                 <label>

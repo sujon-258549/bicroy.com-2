@@ -4,50 +4,63 @@ import Loding from '@/components/Loding/Loding';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-const ProductDetailPage = ({ params }) => {
-    console.log("Params ID:", params._id);  // Debug: Log the params ID
+interface ProductDetailPageProps {
+    params: {
+        id: string; // Assuming 'id' is a part of the params
+    };
+}
 
-    const [selectedProduct, setSelectedProduct] = useState(null);
+interface Product {
+    _id: string;
+    productname: string;
+    brand: string;
+    price: number;
+    phone: string;
+    category: string;
+    subcategory: string;
+    photo: string;
+    message: string;
+}
+
+const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ params }) => {
+    console.log("Params ID:", params.id);  // Debug: Log the params ID
+
+    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
     const [isLoading, setIsLoading] = useState(true);
-  
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
                 const response = await axios.get('http://localhost:3000/api/productget');
                 console.log("API Response Data:", response?.data?.data); // Debug: Log API response data
-                console.log("API Response:", response.data); // Log full response
 
                 // Log each product's ID
-                response.data.data.forEach(product => {
+                response.data.data.forEach((product: Product) => {
                     console.log("Product ID:", product._id); // Log each product ID
                 });
 
-                // Log the type of params._id for comparison
-                console.log("Parameter ID:", typeof(params._id));
-                console.log("Parameter ID Type:", typeof params._id); // Log type of params._id
+                // Log the params.id for comparison
+                console.log("Parameter ID:", params.id);
 
-                // Directly comparing _id values
-                const foundProduct = response.data.data.find(p => parseInt(p._id) === parseInt(params._id));
+                // Find the product using the correct type comparison (string comparison)
+                const foundProduct = response.data.data.find((p: Product) => p._id === params.id);
                 console.log("Found Product:", foundProduct); // Debug: Log found product
 
-                setSelectedProduct(foundProduct);
+                setSelectedProduct(foundProduct || null);
             } catch (err) {
                 console.log("Error fetching products:", err);
-             
             } finally {
                 setIsLoading(false);
             }
         };
 
         fetchProducts();
-    }, [params._id]);
+    }, [params.id]);
 
     if (isLoading) {
         return <div><Loding /></div>;
     }
 
-  
     if (!selectedProduct) {
         return <div className="text-gray-500">Product not found.</div>; // Fallback if product is not found
     }

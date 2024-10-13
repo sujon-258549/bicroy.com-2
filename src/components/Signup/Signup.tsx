@@ -14,7 +14,8 @@ const Signup = () => {
     const router = useRouter()
     console.log(sessin)
 
-    const [location, setLocation] = useState()
+    const [location, setLocation] = useState<string>()
+    // const [location, setLocation] = useState<string | undefined>(undefined);
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const locationData = e.target.value; // Accessing the input's value
         setLocation(locationData);

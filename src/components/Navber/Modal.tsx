@@ -18,13 +18,23 @@ const Modal = () => {
     return (
         <>
             {/* Open the modal using document.getElementById('ID').showModal() method */}
-            <button onClick={() => document.getElementById('my_modal_1').showModal()}> <div
-                onClick={toggleModal}
-                className="flex gap-2 bg-[#10846F] px-4 rounded-full  py-1 items-center text-white"
-                style={{ boxShadow: '1px 1px 20px #000' }}
+            <button
+                onClick={() => {
+                    const modal = document.getElementById('my_modal_1')as HTMLDialogElement;
+                    if (modal) {
+                        modal.showModal();
+                    }
+                }}
             >
-                <FaLocationDot></FaLocationDot>   All of Bangladesh
-            </div></button>
+                <div
+                    onClick={toggleModal}
+                    className="flex gap-2 bg-[#10846F] px-4 rounded-full py-1 items-center text-white"
+                    style={{ boxShadow: '1px 1px 20px #000' }}
+                >
+                    <FaLocationDot /> All of Bangladesh
+                </div>
+            </button>
+
             <dialog id="my_modal_1" className="modal">
                 <div className="modal-box">
                     <div className="flex justify-between items-center">
