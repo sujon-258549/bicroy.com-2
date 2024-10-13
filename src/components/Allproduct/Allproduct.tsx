@@ -35,8 +35,8 @@ const AllProduct = () => {
             setLoading(true); // Reset loading state before fetching
             try {
                 const apiUrl = category 
-                    ? `http://localhost:3000/api/productget?category=${category}` 
-                    : 'http://localhost:3000/api/productget'; // Fetch all products if no category
+                    ? `https://bicroy-com-2.vercel.app/productget?category=${category}` 
+                    : 'https://bicroy-com-2.vercel.app/productget'; // Fetch all products if no category
                 
                 const response = await axios.get<ApiResponse>(apiUrl);
                 

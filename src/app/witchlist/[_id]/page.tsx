@@ -31,7 +31,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ params }) => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/api/productget');
+                const response = await axios.get('https://bicroy-com-2.vercel.app/productget');
                 console.log("API Response Data:", response?.data?.data); // Debug: Log API response data
 
                 // Log each product's ID
