@@ -35,7 +35,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ params }) => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('process.env.NEXT_PUBSICT_URL/api/productget');
+                const response = await axios.get('https://bicroy-com-2.vercel.app/api/productget');
 
                 // Find the specific product by _id
                 const foundProduct = response?.data?.data?.find((product: Product) => product._id === params.id);
@@ -76,7 +76,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ params }) => {
         };
 
         try {
-            const response = await axios.post('process.env.NEXT_PUBSICT_URL/api/addwishlist', wishlist);
+            const response = await axios.post('https://bicroy-com-2.vercel.app/api/addwishlist', wishlist);
             console.log(response.data);
             router.push('/');
         } catch (error) {

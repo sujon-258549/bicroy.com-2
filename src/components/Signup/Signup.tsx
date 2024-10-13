@@ -49,7 +49,7 @@ const Signup = () => {
 
 
 
-        axios.post('process.env.NEXT_PUBSICT_URL/api/userinfo', userInfo)
+        axios.post('https://bicroy-com-2.vercel.app/api/userinfo', userInfo)
             .then(response => {
                 if (response.status === 200) {
                     Swal.fire({
