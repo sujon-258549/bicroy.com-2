@@ -149,7 +149,7 @@ const Signup = () => {
                                                         <option value="Chandpur District">Chandpur District</option>
                                                         <option value="Chittagong District">Chittagong District</option>
                                                         <option value="Comilla District">Comilla District</option>
-                                                        <option value="Cox's Bazar District">Cox's Bazar District</option>
+                                                        <option value="Cox's Bazar District">Cox,s Bazar District</option>
                                                         <option value="Feni District">Feni District</option>
                                                         <option value="Khagrachari District">Khagrachari District</option>
                                                         <option value="Lakshmipur District">Lakshmipur District</option>

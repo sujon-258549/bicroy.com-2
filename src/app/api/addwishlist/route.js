@@ -14,7 +14,7 @@ export async function POST(req) {
         return NextRequest.json({
             message: "wishlist added success"
         })
-    } catch(error){
+    } catch{
         return NextRequest.json({
             message: "sumthing Wrong"
         })

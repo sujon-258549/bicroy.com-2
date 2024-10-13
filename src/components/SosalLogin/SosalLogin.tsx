@@ -12,6 +12,7 @@ const SosalLogin = () => {
 
     const handelSosalLogin = async (provider: string) => {
         const resp = await signIn(provider);
+        console.log(resp)
 
     }
 

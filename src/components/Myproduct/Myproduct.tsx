@@ -11,7 +11,7 @@ const MyProduct = () => {
 
     const [myProduct, setMyProduct] = useState([]);
     const [loading, setLoading] = useState(true);
-    let isMounted = useRef(true); // Flag to track if component is still mounted
+    const isMounted = useRef(true); // Flag to track if component is still mounted
 
     useEffect(() => {
         if (!email) return; // Ensure email is available before making the API call

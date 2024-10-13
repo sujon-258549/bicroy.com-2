@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import dbClient from "../../../db/dbClient";
-const bcrypt = require('bcrypt');
+const bcrypt = `require('bcrypt')`;
 
 export async function POST(req) {
     try {

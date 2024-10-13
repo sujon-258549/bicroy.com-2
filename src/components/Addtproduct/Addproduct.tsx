@@ -8,7 +8,6 @@ import { useSession } from 'next-auth/react';
 
 
 const Addproduct = () => {
-    console.log(sessin)
     const sessin = useSession()
     const email = sessin.data?.user?.email
     const router = useRouter()
@@ -143,8 +142,8 @@ const Addproduct = () => {
                                             <option value="Property">Property</option>
                                             <option value="Home & Living">Home & Living</option>
                                             <option value="Pets & Animals">Pets & Animals</option>
-                                            <option value="Men's Fashion & Grooming">Men's Fashion & Grooming</option>
-                                            <option value="Women's Fashion & Beauty">Women's Fashion & Beauty</option>
+                                            <option value="Men's Fashion & Grooming">Men,s Fashion & Grooming</option>
+                                            <option value="Women's Fashion & Beauty">Women,s Fashion & Beauty</option>
                                             <option value="Hobbies, Sports & Kids">Hobbies, Sports & Kids</option>
                                             <option value="Business & Industry">Business & Industry</option>
                                             <option value="Education">Education</option>

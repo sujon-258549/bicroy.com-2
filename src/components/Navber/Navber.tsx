@@ -7,7 +7,7 @@ import React, { useState } from 'react'
 import { RxCross2 } from 'react-icons/rx'
 import { IoMenu } from 'react-icons/io5'
 import { signOut, useSession } from 'next-auth/react'
-import AuthProvider from '../../app/servises/AuthProvider'
+
 
 
 

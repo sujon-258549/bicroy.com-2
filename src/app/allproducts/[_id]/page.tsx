@@ -7,7 +7,13 @@ import './id.css'
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 
-const ProductDetailPage = ({ params }) => {
+interface ProductDetailPageProps {
+    params: {
+        id: string; // Assuming 'id' is a part of the params
+    };
+}
+
+const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ params }) => {
     const router = useRouter();
     const session = useSession();
     const [product, setProduct] = useState(null); // Initialize as null
@@ -39,8 +45,8 @@ const ProductDetailPage = ({ params }) => {
         return <div>Product not found</div>;
     }
 
-   
-    
+
+
     const email = session?.data?.user?.email;
 
     const handleWishlist = async () => {
