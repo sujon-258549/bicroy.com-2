@@ -8,9 +8,9 @@ import { useSession } from 'next-auth/react';
 
 
 const Addproduct = () => {
+    console.log(sessin)
     const sessin = useSession()
     const email = sessin.data?.user?.email
-    console.log(sessin)
     const router = useRouter()
 
     const [category, setCategory] = useState('');
