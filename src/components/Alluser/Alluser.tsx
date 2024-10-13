@@ -22,7 +22,7 @@ const Alluser: React.FC = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get('https://bicroy-com-2.vercel.app/alluser');
+                const response = await axios.get('https://bicroy-com-2.vercel.app/api/alluser');
                 setAllUsers(response?.data?.data); // Assuming the response contains an array of users
             } catch (err) {
                 console.log(err);

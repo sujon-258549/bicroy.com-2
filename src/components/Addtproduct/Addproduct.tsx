@@ -48,7 +48,7 @@ const Addproduct = () => {
         };
 
         try {
-            const response = await axios.post('https://bicroy-com-2.vercel.app/productpost', productInfo);
+            const response = await axios.post('https://bicroy-com-2.vercel.app/api/productpost', productInfo);
             console.log(response.data);
             router.push('/')
         } catch (error) {

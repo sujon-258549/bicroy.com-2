@@ -21,7 +21,7 @@ const Witchlist = () => {
             setLoading(true); // Set loading to true before starting the fetch
 
             try {
-                const response = await axios.get(`https://bicroy-com-2.vercel.app/getwishlist?email=${email}`);
+                const response = await axios.get(`https://bicroy-com-2.vercel.app/api/getwishlist?email=${email}`);
 
                 // Only set the products if the component is still mounted
                 if (isMounted.current) {
