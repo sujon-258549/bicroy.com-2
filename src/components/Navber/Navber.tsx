@@ -43,66 +43,56 @@ const Navber = () => {
                         <div>
                             <div className={opens ? ' z-50 absolute lg:static hidden lg:block left-0 w-full top-[90%]' : "absolute lg:static z-50  left-0 w-full block top-[90%]"}>
 
-                                <ul className='flex gap-3 bg-[#149777] lg:border-0 lg:p-0 flex-col p-5 rounded-md border-2 lg:flex-row  lg:static '>
+                                <ul className='flex gap-3 bg-[#149777] lg:border-0 lg:p-0 flex-col p-5 rounded-md border-2 lg:flex-row lg:static'>
                                     <li>
                                         <div className="button-container">
-                                            <div className="btn lg:w-20 w-full"><Link href="/">Home</Link></div>
+                                            <div className="btn lg:w-20 w-full">
+                                                <Link href="/">Home</Link>
+                                            </div>
                                         </div>
-
                                     </li>
 
-
-                                    {/* {session.data?.user?.email && ( */}
-
+                                    {session.data?.user?.email ? (
                                         <>
-                                            {/* <AuthProvider> */}
-
-                                                <li>
-                                                    <div className="button-container">
-                                                        <div className="btn lg:w-20 w-full">
-                                                            <a href="/allproducts">Product</a>
-                                                        </div>
+                                            <li>
+                                                <div className="button-container">
+                                                    <div className="btn lg:w-20 w-full">
+                                                        <a href="/allproducts">Product</a>
                                                     </div>
-                                                </li>
-                                                <li>
-                                                    <div className="button-container">
-                                                        <div className="btn lg:w-20 w-full">
-                                                            <a href="/addproduct">Add Product</a>
-                                                        </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div className="button-container">
+                                                    <div className="btn lg:w-20 w-full">
+                                                        <a href="/addproduct">Add Product</a>
                                                     </div>
-                                                </li>
-                                                <li>
-                                                    <div className="button-container">
-                                                        <div className="btn lg:w-20 w-full">
-                                                            <a href="/myproduct">My Product</a>
-                                                        </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div className="button-container">
+                                                    <div className="btn lg:w-20 w-full">
+                                                        <a href="/myproduct">My Product</a>
                                                     </div>
-                                                </li>
-                                                <li>
-                                                    <div className="button-container">
-                                                        <div className="btn lg:w-20 w-full">
-                                                            <a href="/witchlist">Witch List</a>
-                                                        </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div className="button-container">
+                                                    <div className="btn lg:w-20 w-full">
+                                                        <a href="/witchlist">Witch List</a>
                                                     </div>
-                                                </li>
-                                            {/* </AuthProvider> */}
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div className="button-container">
+                                                    <div className="btn lg:w-20 w-full">
+                                                        <Link href="/user">All User</Link>
+                                                    </div>
+                                                </div>
+                                            </li>
                                         </>
-
-                                    {/* )} */}
-
-
-
-
-
-
-
-                                    <li>
-                                        <div className="button-container">
-                                            <div className="btn lg:w-20 w-full"><Link href="/user">All User</Link></div>
-                                        </div>
-
-                                    </li>
+                                    ) : null}
                                 </ul>
+
 
 
                                 {/* <div
