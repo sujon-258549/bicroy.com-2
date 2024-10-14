@@ -35,8 +35,8 @@ const AllProduct = () => {
             setLoading(true); // Reset loading state before fetching
             try {
                 const apiUrl = category 
-                ? `http://localhost:3000/api/productget?category=${category}` 
-                : 'http://localhost:3000/api/productget';
+                ? `${process.env.NEXT_PUBSICT_URL}/api/productget?category=${category}` 
+                : `${process.env.NEXT_PUBSICT_URL}/api/productget`;
             
                 
                 const response = await axios.get<ApiResponse>(apiUrl);
