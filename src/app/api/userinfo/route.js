@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import dbClient from "../../../db/dbClient";
-const bcrypt = `require('bcrypt')`;
+import bcrypt from 'bcrypt';
 
 export async function POST(req) {
     try {
@@ -10,26 +10,40 @@ export async function POST(req) {
 
         // Extract data from request body
         const body = await req.json();
-        const existingUser = await collection.findOne({ email: body.email });
+        const { name, email, password, confirmPassword, phone, location } = body;
 
-        const hashpassword = bcrypt.hashSync(body.password, 10);
-        const hashconfirmPassword = bcrypt.hashSync(body.confirmPassword, 10);
+        // Check if the user already exists
+        const existingUser = await collection.findOne({ email });
 
-
-
-        if (!existingUser) { // Check if user does not exist
-            await collection.insertOne({...body,password:hashpassword, confirmPassword:hashconfirmPassword}); // Insert the user
-
+        if (existingUser) {
             return NextResponse.json({
-                message: "User inserted successfully"
-            });
-        } else {
-            return NextResponse.json({
-                message: "User already signed up" // Correct spelling of "already"
-            });
+                message: "User already signed up"
+            }, { status: 400 });
         }
 
+        // Check if passwords match
+        if (password !== confirmPassword) {
+            return NextResponse.json({
+                message: "Passwords do not match"
+            }, { status: 400 });
+        }
 
+        // Hash the password
+        const hashedPassword = bcrypt.hashSync(password, 10);
+
+        // Insert the user data with hashed password (confirmPassword not stored)
+        await collection.insertOne({
+            name,
+            email,
+            phone,
+            location,
+            password: hashedPassword,
+            acountCreateDate: new Date(),
+        });
+
+        return NextResponse.json({
+            message: "User inserted successfully"
+        }, { status: 201 });
 
     } catch (error) {
         console.error("Error in POST API:", error);

@@ -8,6 +8,7 @@ import { useSession } from "next-auth/react";
 const MyProduct = () => {
     const { data: session } = useSession();
     const email = session?.user?.email;
+    console.log(email)
 
     const [myProduct, setMyProduct] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -32,8 +33,6 @@ const MyProduct = () => {
 
             try {
                 const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/yourproduct?email=${email}`);
-
-                // Only set the products if the component is still mounted
                 if (isMounted.current) {
                     setMyProduct(response?.data?.data || []);
                 }

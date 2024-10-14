@@ -10,6 +10,7 @@ export async function GET(req) {
         // Extract query parameters using URL
         const url = new URL(req.url);
         const email = url.searchParams.get('email');
+        console.log(email)
         let query = {};
 
         // If an email is provided, use it in the query

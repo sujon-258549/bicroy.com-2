@@ -22,7 +22,7 @@ const Alluser: React.FC = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get(`${process.env.NEXT_PUBSICT_URL}/api/alluser`);
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/alluser`);
                 setAllUsers(response?.data?.data); // Assuming the response contains an array of users
             } catch (err) {
                 console.log(err);
