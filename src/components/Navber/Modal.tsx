@@ -28,7 +28,7 @@ const Modal = () => {
             >
                 <div
                     onClick={toggleModal}
-                    className="flex gap-2 bg-[#10846F] px-4 rounded-full py-1 items-center text-white"
+                    className="flex gap-2 bg-[#10846F] px-4 md:mt-0 mt-10 rounded-full py-1 items-center text-white"
                     style={{ boxShadow: '1px 1px 20px #000' }}
                 >
                     <FaLocationDot /> All of Bangladesh

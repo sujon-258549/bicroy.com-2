@@ -35,7 +35,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ params }) => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/api/productget');
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/productget`);
 
                 // Find the specific product by _id
                 const foundProduct = response?.data?.data?.find((product: Product) => product._id === params.id);
@@ -76,7 +76,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ params }) => {
         };
 
         try {
-            const response = await axios.post('http://localhost:3000/api/addwishlist', wishlist);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/addwishlist`, wishlist);
             console.log(response.data);
             router.push('/');
         } catch (error) {

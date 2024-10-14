@@ -52,33 +52,33 @@ const Navber = () => {
                                         </div>
                                     </li>
 
-                                    {session.data?.user?.email ? (
+                                    {session.data?.user?.email && (
                                         <>
                                             <li>
                                                 <div className="button-container">
                                                     <div className="btn lg:w-20 w-full">
-                                                        <a href="/allproducts">Product</a>
+                                                        <Link href="/allproducts">Product</Link>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div className="button-container">
                                                     <div className="btn lg:w-20 w-full">
-                                                        <a href="/addproduct">Add Product</a>
+                                                        <Link href="/addproduct">Add Product</Link>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div className="button-container">
                                                     <div className="btn lg:w-20 w-full">
-                                                        <a href="/myproduct">My Product</a>
+                                                        <Link href="/myproduct">My Product</Link>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div className="button-container">
                                                     <div className="btn lg:w-20 w-full">
-                                                        <a href="/witchlist">Witch List</a>
+                                                        <Link href="/witchlist">Witch List</Link>
                                                     </div>
                                                 </div>
                                             </li>
@@ -90,7 +90,29 @@ const Navber = () => {
                                                 </div>
                                             </li>
                                         </>
-                                    ) : null}
+                                    )}
+
+                                    <li className='block lg:hidden'>
+                                        <div>
+                                            {session.data ? (
+                                                <button onClick={() => signOut()} className="relative group cursor-pointer text-sky-50 overflow-hidden h-12 w-full rounded-md bg-sky-800 p-2 flex justify-center items-center font-extrabold">
+                                                    <div className="absolute top-3 right-20 group-hover:top-12 group-hover:-right-12 z-10 w-40 h-40 rounded-full group-hover:scale-150 group-hover:opacity-50 duration-500 bg-sky-900"></div>
+                                                    <div className="absolute top-3 right-20 group-hover:top-12 group-hover:-right-12 z-10 w-32 h-32 rounded-full group-hover:scale-150 group-hover:opacity-50 duration-500 bg-sky-800"></div>
+                                                    <div className="absolute top-3 right-20 group-hover:top-12 group-hover:-right-12 z-10 w-24 h-24 rounded-full group-hover:scale-150 group-hover:opacity-50 duration-500 bg-sky-700"></div>
+                                                    <div className="absolute top-3 right-20 group-hover:top-12 group-hover:-right-12 z-10 w-14 h-14 rounded-full group-hover:scale-150 group-hover:opacity-50 duration-500 bg-sky-600"></div>
+                                                    <p className="z-10">Sign out</p>
+                                                </button>
+                                            ) : (
+                                                <Link href={'/login'} className="relative group cursor-pointer text-sky-50 overflow-hidden h-12 w-full rounded-md bg-sky-800 p-2 flex justify-center items-center font-extrabold">
+                                                    <div className="absolute top-3 right-20 group-hover:top-12 group-hover:-right-12 z-10 w-40 h-40 rounded-full group-hover:scale-150 group-hover:opacity-50 duration-500 bg-sky-900"></div>
+                                                    <div className="absolute top-3 right-20 group-hover:top-12 group-hover:-right-12 z-10 w-32 h-32 rounded-full group-hover:scale-150 group-hover:opacity-50 duration-500 bg-sky-800"></div>
+                                                    <div className="absolute top-3 right-20 group-hover:top-12 group-hover:-right-12 z-10 w-24 h-24 rounded-full group-hover:scale-150 group-hover:opacity-50 duration-500 bg-sky-700"></div>
+                                                    <div className="absolute top-3 right-20 group-hover:top-12 group-hover:-right-12 z-10 w-14 h-14 rounded-full group-hover:scale-150 group-hover:opacity-50 duration-500 bg-sky-600"></div>
+                                                    <p className="z-10">Sign in</p>
+                                                </Link>
+                                            )}
+                                        </div>
+                                    </li>
                                 </ul>
 
 
@@ -141,7 +163,7 @@ const Navber = () => {
                                 </div> */}
                             </div>
                         </div>
-                        <div>
+                        <div className='flex gap-2 items-center'>
 
 
 
@@ -152,7 +174,7 @@ const Navber = () => {
                                         <div className='flex gap-2'>
                                             {
                                                 session.data?.user?.image &&
-                                                <div className="avatar">
+                                                <div className="avatar ">
                                                     <div className="ring-primary ring-offset-base-100 w-12 rounded-full ring ring-offset-2">
                                                         <img src={session.data?.user?.image} />
                                                     </div>

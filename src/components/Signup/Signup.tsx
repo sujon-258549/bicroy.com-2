@@ -49,7 +49,7 @@ const Signup = () => {
 
 
 
-        axios.post('http://localhost:3000/api/userinfo', userInfo)
+        axios.post(`${process.env.NEXT_PUBLIC_URL}/api/userinfo`, userInfo)
             .then(response => {
                 if (response.status === 200) {
                     Swal.fire({

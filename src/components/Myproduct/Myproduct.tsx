@@ -31,7 +31,7 @@ const MyProduct = () => {
             setLoading(true); // Set loading to true before starting the fetch
 
             try {
-                const response = await axios.get(`http://localhost:3000/api/yourproduct?email=${email}`);
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/yourproduct?email=${email}`);
 
                 // Only set the products if the component is still mounted
                 if (isMounted.current) {

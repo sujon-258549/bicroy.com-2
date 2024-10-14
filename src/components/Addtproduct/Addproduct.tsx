@@ -48,7 +48,7 @@ const Addproduct = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:3000/api/productpost', productInfo);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/productpost`, productInfo);
             console.log(response.data);
             router.push('/')
         } catch (error) {
